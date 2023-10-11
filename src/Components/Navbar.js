@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
     <nav>
         <ul className='text-xl flex space-x-6 justify-center py-10'>
-            <li className='cursor-pointer'>HOME</li>
-            <li className='cursor-pointer'>ABOUT</li>
-            <li className='cursor-pointer'>SERVICE</li>
-            <li className='cursor-pointer'>PROVIDER</li>
+            <NavLink to="/" >Home </NavLink>
+            <NavLink to="/Patient" >Patient</NavLink>
+            <NavLink to="/About" >About</NavLink>
+            <NavLink to="/Contact" >Contact Us</NavLink>
         </ul>
     </nav>
   )

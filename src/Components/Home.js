@@ -1,24 +1,32 @@
 import React from 'react'
-import img from '../Asset/1493176.png'
-export const Home = () => {
-  return (
-    <div className='main py-40 pl-9 flex justify-around'>
-      <div>
-      <div className='text-6xl text-red-400'>Dispensary For Medicine</div>
-      <div><strong className='text-6xl text-red-500'>And Treatment</strong></div>
-      <div className='text-3xl py-10'>A place where wellness and cannabis meet.</div>
-      <div>
-        <div className='my-4'>
-          <button className='bg-red-400 px-3 py-2 text-white mx-2 '>Buy Now</button>
-          <button className='bg-blue-400 px-3 py-2 text-white mx-2 '>Contact Us</button>
-        </div>
-      </div>
-      </div>
-      <div className='flex item-center'>
-        <img src={img} className='h-80' />
-      </div>
-    </div>
+import img1 from '../Asset/dr1.png'
 
+export const Home = () => {
+  let gridstyle={
+    display: "grid",
+    margin: 150
+  }
+  let person={
+     border:"2px solid black",
+     height: "100px",
+     
+  }
+  return (
+<div className ="container text-center " style={gridstyle}>
+  <div className ="row">
+    <div className="col text-center" style={person}>
+      <h1>Doctor</h1>
+      <img src={img1} alt='Doctor_image' className='h-20 center'></img>
+    </div>
+    <div className="col text-center" style={person}>
+     <h1> Patient/customer</h1> 
+    </div>
+    <div className="col text-center" style={person}>
+      <h1>Admin</h1>
+    </div>
+  </div>
+</div>
+   
   )
 }
 export default Home;
