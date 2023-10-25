@@ -21,10 +21,10 @@ function AppointmentForm() {
     <>
     <div className="appointment-form justify-around">
       <h2>Schedule an Appointment</h2>
-      <div className=''>
-      <figure>
+      <div className='photo'>
+    
             <img src={img} alt="" className='h-60' />
-        </figure>
+
       </div>
       
       <form onSubmit={handleFormSubmit}>
