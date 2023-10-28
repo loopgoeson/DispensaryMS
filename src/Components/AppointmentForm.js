@@ -18,7 +18,7 @@ function AppointmentForm() {
   };
 
   return (
-    <>
+    <div className=''>
     <div className="appointment-form justify-around">
       <h2>Schedule an Appointment</h2>
       <div className='photo'>
@@ -119,7 +119,7 @@ function AppointmentForm() {
       </div>
       
     
-      </>
+      </div>
   );
 }
 
