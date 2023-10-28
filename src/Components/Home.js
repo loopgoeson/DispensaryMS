@@ -1,32 +1,39 @@
-import React from 'react'
-import img1 from '../Asset/dr1.png'
-
+import React from "react";
+import dr from "../Asset/dr1.png";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import "./Home.css";
 export const Home = () => {
-  let gridstyle={
-    display: "grid",
-    margin: 150
-  }
-  let person={
-     border:"2px solid black",
-     height: "100px",
-     
-  }
   return (
-<div className ="container text-center " style={gridstyle}>
-  <div className ="row">
-    <div className="col text-center" style={person}>
-      <h1>Doctor</h1>
-      <img src={img1} alt='Doctor_image' className='h-20 center'></img>
+    <div className="abc">
+      <div className="abc1">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={dr} />
+          <Card.Body>
+            <Card.Title>Doctor</Card.Title>
+            <Button variant="primary">Add to cart</Button>
+          </Card.Body>
+        </Card>
+      </div>
+      <div className="abc1">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={dr} />
+          <Card.Body>
+            <Card.Title>Doctor</Card.Title>
+            <Button variant="primary">Add to cart</Button>
+          </Card.Body>
+        </Card>
+      </div>
+      <div className="abc1">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={dr} />
+          <Card.Body>
+            <Card.Title>Doctor</Card.Title>
+            <Button variant="primary">Add to cart</Button>
+          </Card.Body>
+        </Card>
+      </div>
     </div>
-    <div className="col text-center" style={person}>
-     <h1> Patient/customer</h1> 
-    </div>
-    <div className="col text-center" style={person}>
-      <h1>Admin</h1>
-    </div>
-  </div>
-</div>
-   
-  )
-}
+  );
+};
 export default Home;
