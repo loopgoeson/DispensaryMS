@@ -6,7 +6,8 @@ import Contact from './Components/Contact';
 import About from './Components/About';
 import Pharmacy from './Components/Pharmacy';
 import AppointmentForm from './Components/AppointmentForm';
-
+import LoginAdmin from './Components/LoginAdmin';
+import LoginDoctor from './Components/LoginDoctor';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path='/Contact' element={<Contact/>}/>
         <Route path='/AppointmentForm' element={< AppointmentForm/>} />
         <Route path='/Pharmacy' element={< Pharmacy/>}/>
+        <Route path='/LoginAdmin' element={<LoginAdmin/>}/>
+        <Route path='/LoginDoctor' element={<LoginDoctor/>}/>
       </Routes>
     </Router>
      
