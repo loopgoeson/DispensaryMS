@@ -27,6 +27,6 @@ let products =[
     name:'Citrizine',
     price:600,
     image:citrizine
-}
+},
 ];
 export default products;
