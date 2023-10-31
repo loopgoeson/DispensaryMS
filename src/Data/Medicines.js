@@ -165,7 +165,7 @@ let products =[
     image:azithromycin,
 },
 {
-    id:4,
+    id:50,
     name:'Citrizine',
     price:600,
     image:citrizine,
