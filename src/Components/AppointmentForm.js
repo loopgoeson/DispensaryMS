@@ -6,7 +6,7 @@ function AppointmentForm() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [patientName, setPatientName] = useState('');
-  const [selectedOption, setSelectedOption] = useState('');
+  const [doctor, setDoctor] = useState('');
   const [age, setAge]=useState('');
   const [selectedGender, setSelectedGender] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
@@ -14,7 +14,7 @@ function AppointmentForm() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log('Appointment details submitted:', { date, time, patientName });
+    console.log('Appointment details submitted:', { date, time, patientName,doctor,age,selectedGender,mobileNumber});
   };
 
   return (
@@ -22,9 +22,7 @@ function AppointmentForm() {
     <div className="appointment-form justify-around">
       <h2>Schedule an Appointment</h2>
       <div className='photo'>
-    
             <img src={img} alt="" className='h-60' />
-
       </div>
       
       <form onSubmit={handleFormSubmit}>
@@ -51,14 +49,14 @@ function AppointmentForm() {
         <div>
            <label>Doctor Name :</label>
            <select
-            value={selectedOption}
-            onChange={(e)=> setSelectedOption(e.target.value)}
+            value={doctor}
+            onChange={(e)=> setDoctor(e.target.value)}
            >
             <option value="" disabled>
               Select a Doctor
             </option>
-            <option value="bhatra">Dr. Gambhir Bhatra </option>
-            <option value="sinha">Dr. Manoj Sinha </option>
+            <option value="bhatra">Dr. Gambhir Bhatra</option>
+            <option value="sinha">Dr. Manoj Sinha</option>
             <option value="rao">Dr. Gaurav Rao</option>
            </select>
         </div>

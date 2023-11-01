@@ -2,6 +2,8 @@ import './LoginDoctor.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import dr from "../Asset/dr1.png";
 
 function LoginDoctor(){
   const [selectedOption, setSelectedOption] = useState('');
@@ -12,8 +14,9 @@ function LoginDoctor(){
   };
   return (
    <Form className='form' onSubmit={handleFormSubmit}>
-     <div>
-           <label>Doctor Name :</label>
+     <img src={dr} alt='Doctor_image' />
+     <div> 
+      <label>Doctor Name:</label>
            <select
             value={selectedOption}
             onChange={(e)=> setSelectedOption(e.target.value)}
@@ -30,11 +33,10 @@ function LoginDoctor(){
          
        </div>
        <div>
-       <Button variant="outline-primary" type="submit">
-      Submit
-    </Button>
+       <Button variant="outline-primary" type="submit" >
+         <Link to="/AppointDisplay">Proceed</Link>
+        </Button>
        </div>
-   
    </Form>
   )
 }

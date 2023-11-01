@@ -8,6 +8,8 @@ import Pharmacy from './Components/Pharmacy';
 import AppointmentForm from './Components/AppointmentForm';
 import LoginAdmin from './Components/LoginAdmin';
 import LoginDoctor from './Components/LoginDoctor';
+import Appointment from './Components/Appointment';
+import AppointDisplay from './Components/AppointDisplay';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/Pharmacy' element={< Pharmacy/>}/>
         <Route path='/LoginAdmin' element={<LoginAdmin/>}/>
         <Route path='/LoginDoctor' element={<LoginDoctor/>}/>
+        <Route path='/Appointment' element={< Appointment/>} />
+        <Route path='/AppointDisplay' element={<AppointDisplay/>}/>
       </Routes>
     </Router>
      
