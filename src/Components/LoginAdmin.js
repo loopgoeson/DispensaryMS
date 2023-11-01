@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Card } from 'react-bootstrap';
 import dr from "../Asset/dr1.png";
+import { Link } from 'react-router-dom';
 import './LoginAdmin.css'
 const LoginAdmin = () => {
   return (
@@ -17,9 +18,8 @@ const LoginAdmin = () => {
       <Form.Control type="password" placeholder=" Enter Password" />
     </Form.Group>
     <Button variant="outline-primary" type="submit">
-      Submit
+    <Link to="/AdminPortal">Proceed</Link>
     </Button>
-   
   </Form>
   )
 }

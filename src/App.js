@@ -10,6 +10,7 @@ import LoginAdmin from './Components/LoginAdmin';
 import LoginDoctor from './Components/LoginDoctor';
 import Appointment from './Components/Appointment';
 import AppointDisplay from './Components/AppointDisplay';
+import AdminPortal from './Components/AdminPortal';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/LoginDoctor' element={<LoginDoctor/>}/>
         <Route path='/Appointment' element={< Appointment/>} />
         <Route path='/AppointDisplay' element={<AppointDisplay/>}/>
+        <Route path='/AdminPortal' element={<AdminPortal/>}></Route>
       </Routes>
     </Router>
      

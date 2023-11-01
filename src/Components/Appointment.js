@@ -19,6 +19,7 @@ const Appointment = (props) => {
             <h2>Date:{props.date}</h2>
             <h2>Time:{props.time}</h2>
             <h2>Mobile:{props.mobileNumber}</h2>
+            <h2>Doctor:{props.doctor}</h2>
         </Card.Text>
       </Card.Body>
     </Card>
