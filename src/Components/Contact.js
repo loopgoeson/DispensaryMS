@@ -59,7 +59,7 @@ function Contact() {
       </div>
      
 
-      <h2 className='text-center py-1'>You can also leave your message to us!</h2>
+      <h2 className='text-center py-1'>You can also leave your message/query to us!</h2>
       <form style={formStyle} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -84,7 +84,7 @@ function Contact() {
           />
         </div>
         <div>
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message">Message/Query:</label>
           <textarea
             style={inputStyle}
             id="message"

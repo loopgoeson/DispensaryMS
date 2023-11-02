@@ -149,25 +149,25 @@ let products =[
 {
     id:5,
     name:'Dolo 650',
-    price:200,
+    price:30,
     image:dolo,
 },
 {
     id:2,
     name:'Saridon',
-    price:350,
+    price:30,
     image:saridon,
 },
 {
     id:3,
     name:'Azithromycin',
-    price:400,
+    price:50,
     image:azithromycin,
 },
 {
-    id:50,
+    id:1,
     name:'Citrizine',
-    price:600,
+    price:14,
     image:citrizine,
 },
 
