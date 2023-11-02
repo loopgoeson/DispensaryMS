@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <div>
-        <p>
+        <p className="text-xl text-center">
           here,we are dedicated to revolutionizing healthcare management through
           our innovative and comprehensive Dispensary Management System. Our
           journey began with a simple yet powerful vision: to enhance the
@@ -18,8 +18,8 @@ const About = () => {
       </div>
       <br />
       <br />
-      <p className="text-3xl text-red-400">Our <strong className="text-red-500">Mission</strong></p>
-      <p>
+      <p className="text-3xl text-red-400 text-center">Our <strong className="text-red-500">Mission</strong></p>
+      <p className="text-xl text-center">
         Our mission is clear: to empower healthcare providers with the tools and
         resources they need to deliver exceptional patient care, streamline
         operations, and ensure the responsible management of medication and
@@ -29,8 +29,8 @@ const About = () => {
       </p>
       <br />
       <br />
-      <p className="text-3xl text-red-400">The Heart of Our <strong className="text-red-500">Solution</strong></p>
-      <p>
+      <p className="text-3xl text-red-400 text-center">The Heart of Our <strong className="text-red-500">Solution</strong></p>
+      <p  className="text-xl text-center">
         At the heart of our mission is the Dispensary Management System (DMS)
         itself. This sophisticated software is designed to be a one-stop
         solution for the intricate challenges faced by healthcare facilities
@@ -38,8 +38,8 @@ const About = () => {
       </p>
       <br />
       <br />
-      <p className="text-3xl text-red-400">Our <strong className="text-red-500">Clients</strong></p>
-      <p>
+      <p className="text-3xl text-red-400 text-center">Our <strong className="text-red-500">Clients</strong></p>
+      <p className="text-xl text-center">
         Our clients are at the center of everything we do. We are honored to
         work with a diverse range of healthcare providers, from large hospitals
         to small clinics. Their stories of success and their ability to improve
@@ -47,8 +47,8 @@ const About = () => {
       </p>
       <br />
       <br />
-      <p className="text-3xl text-red-400">Our <strong className="text-red-500">Team</strong></p>
-      <p>
+      <p className="text-3xl text-red-400 text-center">Our <strong className="text-red-500">Team</strong></p>
+      <p className="text-xl text-center">
         Our team includes software developers, healthcare experts, regulatory
         compliance specialists, and customer support professionals. We work
         collaboratively to design, develop, and support our Dispensary
@@ -60,9 +60,9 @@ const About = () => {
       </p>
       <br />
       <br />
-      <p>
-        Thank you for visiting our "About Us" page. We look forward to the
-        opportunity to serve you and your healthcare facility.
+      <p className="text-2xl text-center my-3">
+        <strong>Thank you for visiting our "About Us" page. We look forward to the
+        opportunity to serve you and your healthcare facility.</strong>
       </p>
     </div>
   );
