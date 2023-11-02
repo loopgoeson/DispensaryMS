@@ -14,6 +14,7 @@ import AdminPortal from './Components/AdminPortal';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
+    <div>
     <Router>
       <Navbar/>
       <Routes>
@@ -30,7 +31,15 @@ function App() {
         <Route path='/AdminPortal' element={<AdminPortal/>}></Route>
       </Routes>
     </Router>
-     
+    <footer>
+      <div className='bg-red-300'>
+        <p></p>
+      </div>
+      <div className='bg-red-400'>
+        <p><strong>©Copyright. All right reserved</strong></p>
+      </div>
+    </footer>
+    </div>
     
   );
 }
