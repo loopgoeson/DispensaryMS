@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import patient from '../Asset/patient.jpg'
-import admin from '../Asset/admin.png'
+import patient from '../Asset/patient1.jpg'
+import admin from '../Asset/admin1.jpg'
 export const Home = () => {
   return (
     <div className="abc">
