@@ -12,8 +12,8 @@ function AppointmentForm() {
   const [mobileNumber, setMobileNumber] = useState('');
 
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
     console.log('Appointment details submitted:', { date, time, patientName,doctor,age,selectedGender,mobileNumber});
   };
 
@@ -111,7 +111,7 @@ function AppointmentForm() {
         </div>
 
         <div>
-          <button type="submit">Submit Appointment</button>
+          <button onClick={handleFormSubmit} value="Submit" type="submit">Submit Appointment</button>
         </div>
       </form>
       </div>
