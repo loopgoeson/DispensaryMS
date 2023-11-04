@@ -31,14 +31,7 @@ function App() {
         <Route path='/AdminPortal' element={<AdminPortal/>}></Route>
       </Routes>
     </Router>
-    <footer>
-      <div className='bg-red-300'>
-        <p></p>
-      </div>
-      <div className='bg-red-400'>
-        <p><strong>©Copyright. All right reserved</strong></p>
-      </div>
-    </footer>
+  
     </div>
     
   );
