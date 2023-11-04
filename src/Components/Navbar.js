@@ -4,11 +4,16 @@ import { NavLink } from 'react-router-dom';
 export const Navbar = () => {
   return (
     <nav>
-        <ul className='text-xl flex space-x-6 justify-center py-10'>
-            <NavLink to="/" >Home </NavLink>
-            
-            <NavLink to="/About" >About</NavLink>
-            <NavLink to="/Contact" >Contact Us</NavLink>
+        <ul className='text-2xl flex space-x-6 justify-center py-12'>
+          <div className='hover:text-3xl'>
+          <NavLink to="/" ><strong >Home</strong> </NavLink>
+          </div>
+          <div className='hover:text-3xl'>
+          <NavLink to="/About" ><strong >About </strong> </NavLink>
+          </div>
+            <div  className='hover:text-3xl'>
+            <NavLink to="/Contact" ><strong>Contact Us</strong> </NavLink>
+            </div>
         </ul>
     </nav>
   )

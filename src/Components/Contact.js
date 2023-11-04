@@ -26,10 +26,7 @@ const buttonStyle = {
   borderRadius: '5px',
   cursor: 'pointer',
 };
-const contactstyle={
-   fontFamily:'Young Serif ,serif',
-   
-};
+
 
 function Contact() {
   
@@ -50,16 +47,20 @@ function Contact() {
   };
 
   return (
-    <div>
+    <div className='flex-col justify-center'>
       <div>
-      <h1 className='' style={contactstyle}>Contact Us</h1>
-      <p>If you have any questions or feedback, please feel free to reach out to us.</p>
-      <p>Email: rungtaraghav43@gmail.com</p>
-      <p>Phone: +91-9839522557</p>
+      <h1 className='text-4xl text-red-400 text-center'><strong>CONTACT US</strong></h1>
+      <br/>
+      <p className='text-xl text-center'>If you have any questions or feedback, please feel free to reach out to us.</p>
+      <br/>
+      <p className='text-center'><strong>Email:</strong> rungtaraghav43@gmail.com</p>
+      <br/>
+      <p className='text-center'><strong>Phone:</strong> +91-9839522557</p>
       </div>
-     
-
-      <h2 className='text-center py-1'>You can also leave your message/query to us!</h2>
+     <br/>
+     <div>
+      <h2 className='text-xl text-center'><strong>You can also leave your message/query to us!</strong></h2>
+      <br/>
       <form style={formStyle} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -97,6 +98,7 @@ function Contact() {
           Submit
         </button>
       </form>
+      </div>
     </div>
   );
 }
