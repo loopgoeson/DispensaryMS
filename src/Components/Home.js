@@ -1,5 +1,5 @@
 import React from "react";
-import dr from "../Asset/dr1.png";
+import dr from "../Asset/doctor.jpg";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Home.css";
