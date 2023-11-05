@@ -94,7 +94,7 @@ function Contact() {
             onChange={handleInputChange}
           />
         </div>
-        <button style={buttonStyle} type="submit">
+        <button onClick={handleSubmit} style={buttonStyle} type="submit">
           Submit
         </button>
       </form>
