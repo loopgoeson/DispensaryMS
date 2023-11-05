@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <div>
         <p className="text-xl text-center">
-          here,we are dedicated to revolutionizing healthcare management through
+          Here, we are dedicated to revolutionizing healthcare management through
           our innovative and comprehensive Dispensary Management System. Our
           journey began with a simple yet powerful vision: to enhance the
           efficiency, safety, and quality of healthcare operations by providing
