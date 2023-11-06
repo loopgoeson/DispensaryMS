@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const AppointmentsSchema = new Schema({
     date: {
-        type: Date,
+        type: String,
         required: true
     },
     time: {
@@ -27,22 +27,9 @@ const AppointmentsSchema = new Schema({
        required:true
     },
     mobileNumber: {
-        type: String,
+        type: Number,
         required: true
     },
 })
 
-const Appointment = new mongoose.model("Appointments", AppointmentsSchema)
-
-
-const appoint= new Appointment({
-    date:"10/11/23",
-        time:"7:30 am",
-        patientName:"Manoj Jain",
-        doctor:"Dr. Manoj Sinha",
-        age:45,
-        gender:"Male",
-        mobileNumber:9865456789
-})
-
-appoint.save();
+module.exports =  mongoose.model("Appointments", AppointmentsSchema)

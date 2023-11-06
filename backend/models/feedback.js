@@ -16,5 +16,4 @@ const feedbackSchema=new Schema({
     }
 })
 
-const feedback=mongoose.model("feedback",feedbackSchema)
-module.exports=feedback
+module.exports=mongoose.model("feedback",feedbackSchema)
