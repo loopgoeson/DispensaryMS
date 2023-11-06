@@ -18,5 +18,15 @@ router.post('/addFeedback', (req, res) => {
         res.status(500).send(err);
       });
   });
+
+  router.get('/displayFeed',(req,res)=>{
+    feed.find({})
+    .then((feeds) => {
+      res.json(feeds);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+  })
   
   module.exports=router;

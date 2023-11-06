@@ -20,5 +20,15 @@ router.post('/addOrders', (req, res) => {
         res.status(500).send(err);
       });
   });
+
+  router.get('/displayOrders',(req,res)=>{
+    order.find({})
+    .then((orders) => {
+      res.json(orders);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+  })
   
   module.exports=router;

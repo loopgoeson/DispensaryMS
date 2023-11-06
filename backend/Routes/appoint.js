@@ -22,4 +22,14 @@ router.post('/addAppointment', (req, res) => {
     });
 });
 
+router.get('/displayAppointment',(req,res)=>{
+  Appointment.find({})
+  .then((appointments) => {
+    res.json(appointments);
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  });
+})
+
 module.exports=router;
