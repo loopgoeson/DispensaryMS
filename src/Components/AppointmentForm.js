@@ -2,20 +2,44 @@ import React, { useState } from 'react';
 import './AppointmentForm.css'; 
 import img from '../Asset/appointment1.jpg';
 
+
 function AppointmentForm() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [patientName, setPatientName] = useState('');
   const [doctor, setDoctor] = useState('');
   const [age, setAge]=useState('');
-  const [selectedGender, setSelectedGender] = useState('');
+  const [gender, setGender] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
 
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async(e) => {
     e.preventDefault();
-    console.log('Appointment details submitted:', { date, time, patientName,doctor,age,selectedGender,mobileNumber});
-  };
+    console.log('Appointment details submitted:', { date, time, patientName,doctor,age,gender,mobileNumber});
+            let response = await fetch("http://localhost:3001/api/addAppointment", {
+                method: "POST",
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                    date : date,
+                    time: time,
+                    patientName: patientName,
+                    doctor:doctor,
+                    age:age,
+                    gender:gender,
+                    mobileNumber:mobileNumber
+                })
+            });
+            const json = await response.json();
+    console.log(json);
+    if (!json.success) {
+      alert("Oops, Couldn't book your appointment ");
+    }
+    if (json.success) {
+      alert("Appointment booked !")
+    }
+            
+            };
+
 
   return (
     <div className=''>
@@ -86,8 +110,8 @@ function AppointmentForm() {
         <div>
           <label>Gender:</label>
           <select
-            value={selectedGender}
-            onChange={(e) => setSelectedGender(e.target.value)}
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
             required
           >
             <option value="" disabled>
