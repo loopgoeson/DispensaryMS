@@ -41,9 +41,21 @@ function Contact() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+   window.location.reload();
     console.log(formData);
+    let response = await fetch("http://localhost:3001/api/addFeedback", {
+                method: "POST",
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                   name: formData.name,
+                   email: formData.email,
+                   feedback: formData.message
+                })
+            });
+            const json = await response.json();
+            console.log(json);
   };
 
   return (

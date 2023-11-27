@@ -11,6 +11,8 @@ import LoginDoctor from './Components/LoginDoctor';
 import Appointment from './Components/Appointment';
 import AppointDisplay from './Components/AppointDisplay';
 import AdminPortal from './Components/AdminPortal';
+import Feedback from './Components/Feedback';
+import FeedDisplay from './Components/FeedDisplay';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path='/LoginDoctor' element={<LoginDoctor/>}/>
         <Route path='/Appointment' element={< Appointment/>} />
         <Route path='/AppointDisplay' element={<AppointDisplay/>}/>
+        <Route path='/Feedback' element={< Feedback/>} />
+        <Route path='/FeedDisplay' element={<FeedDisplay/>}/>
         <Route path='/AdminPortal' element={<AdminPortal/>}></Route>
       </Routes>
     </Router>

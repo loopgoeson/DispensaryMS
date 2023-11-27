@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Appointment = (props) => {
     const [checked, setChecked] = useState(false);
-    const image= (props.gender==='Male')?male:female;
+    const image= (props.gender==="Male")?male:female;
   return (
    <>  
     <Card style={{ width: '18rem' }}>

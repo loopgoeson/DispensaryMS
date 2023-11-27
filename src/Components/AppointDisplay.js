@@ -1,9 +1,24 @@
 import React from 'react'
-import appointments from '../Data/Appointment'
 import Appointment from './Appointment'
 import './AppointDisplay.css'
+import { useState, useEffect } from 'react'
 
 const AppointDisplay = () => {
+    
+  const [appointments,setAppointments]=useState([]);
+
+  useEffect(() => {
+    fetchAppointments();
+  }, []); 
+
+  const fetchAppointments= async()=>{
+    let response = await fetch("http://localhost:3001/api/displayAppointment", {
+      method: "GET",
+      headers: { 'Content-type': 'application/json' },
+  });
+  const data = await response.json();
+      setAppointments(data);
+  }
   return (
     <div className='appointments'>
       {

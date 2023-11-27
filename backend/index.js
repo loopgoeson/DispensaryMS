@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const appointRoute =require('../backend/Routes/appoint');
 const orderRoute=require('../backend/Routes/order');
 const feedRoute=require('../backend/Routes/feed');
+const adminRoute=require('../backend/Routes/admin')
 const cors = require("cors");
 
 
@@ -32,10 +33,11 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
- 
+
 app.use('/api', appointRoute);
 app.use('/api',orderRoute);
-app.use('/api',feedRoute)
+app.use('/api',feedRoute);
+app.use('/api',adminRoute)
 const port = 3001;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

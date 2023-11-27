@@ -30,7 +30,7 @@ const AdminPortal = () => {
           <Card.Img className='img' variant="top"  src={query}/>
           <Card.Body>
           <Button variant="outline-primary" type="submit" >
-         <Link to="">Feedback/query</Link>
+         <Link to="/FeedDisplay">Feedback/query</Link>
         </Button>
           </Card.Body>
         </Card>

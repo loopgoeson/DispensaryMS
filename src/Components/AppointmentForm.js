@@ -15,6 +15,7 @@ function AppointmentForm() {
 
   const handleFormSubmit = async(e) => {
     e.preventDefault();
+    window.location.reload();
     console.log('Appointment details submitted:', { date, time, patientName,doctor,age,gender,mobileNumber});
             let response = await fetch("http://localhost:3001/api/addAppointment", {
                 method: "POST",
@@ -31,11 +32,12 @@ function AppointmentForm() {
             });
             const json = await response.json();
     console.log(json);
+    
     if (!json.success) {
       alert("Oops, Couldn't book your appointment ");
     }
     if (json.success) {
-      alert("Appointment booked !")
+      alert("Appointment booked !");
     }
             
             };
@@ -117,8 +119,8 @@ function AppointmentForm() {
             <option value="" disabled>
               Select gender
             </option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
             <option value="other">Other</option>
           </select>
         </div>
