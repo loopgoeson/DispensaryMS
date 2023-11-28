@@ -21,7 +21,10 @@ const FeedDisplay = () => {
     }
 
   return (
-    <div className='feedbacks'>
+    <>
+        <h1 className='text-4xl text-blue-400 text-center'><strong>Feedbacks </strong></h1>
+
+     <div className='feedbacks'>
       {
          feedbacks.map((feedback,i)=>{
             return <Feedback key={i}
@@ -32,6 +35,8 @@ const FeedDisplay = () => {
          })
       }
     </div>
+    </>
+   
   )
 }
 

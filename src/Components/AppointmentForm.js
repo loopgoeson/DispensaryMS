@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AppointmentForm.css'; 
 import img from '../Asset/appointment1.jpg';
-
+import validator from 'validator';
 
 function AppointmentForm() {
   const [date, setDate] = useState('');
@@ -11,12 +11,16 @@ function AppointmentForm() {
   const [age, setAge]=useState('');
   const [gender, setGender] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
+  const [errors, setErrors] = useState({});
 
 
   const handleFormSubmit = async(e) => {
     e.preventDefault();
-    window.location.reload();
-    console.log('Appointment details submitted:', { date, time, patientName,doctor,age,gender,mobileNumber});
+
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length === 0) {
+      console.log('Appointment details submitted:', { date, time, patientName,doctor,age,gender,mobileNumber});
+      alert("Appointment booked !");
             let response = await fetch("http://localhost:3001/api/addAppointment", {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
@@ -32,16 +36,60 @@ function AppointmentForm() {
             });
             const json = await response.json();
     console.log(json);
+    resetForm();
     
-    if (!json.success) {
-      alert("Oops, Couldn't book your appointment ");
-    }
-    if (json.success) {
-      alert("Appointment booked !");
-    }
-            
+  }else {
+    setErrors(validationErrors);
+    displayErrors(validationErrors);
+  }       
+            };
+            const validateForm = () => {
+              let errors={};
+              if (!validator.isDate(date)) {
+                errors.date = 'Please enter a valid date';
+              }
+          
+
+
+              if (!validator.isAlpha(patientName.replace(/\s/g, '')) && !validator.isLength(patientName, { min: 4 })) {
+                errors.patientName = 'Please enter a valid name';
+              }
+              if (validator.isEmpty(time)) {
+                errors.time = 'Please select a time';
+              }
+              if (validator.isEmpty(doctor)) {
+                errors.doctor = 'Please select a doctor';
+              }
+          
+              if (!validator.isInt(age.toString())) {
+                errors.age = 'Please enter a valid age';
+              }
+          
+              if (!['Male', 'Female', 'Other'].includes(gender)) {
+                errors.gender = 'Please select a gender';
+              }
+          
+              if (!validator.isMobilePhone(mobileNumber, 'any', { strictMode: false && !validator.isLength(mobileNumber, { min: 10, max: 10 }) })) {
+                errors.mobileNumber = 'Please enter a valid mobile number';
+              }
+          
+              return errors;
             };
 
+            const displayErrors = (validationErrors) => {
+              Object.keys(validationErrors).forEach((key) => {
+                alert(validationErrors[key]);
+              });
+            };
+            const resetForm = () => {
+              setDate('');
+              setTime('');
+              setPatientName('');
+              setDoctor('');
+              setAge('');
+              setGender('');
+              setMobileNumber('');
+            };
 
   return (
     <div className=''>
@@ -81,9 +129,9 @@ function AppointmentForm() {
             <option value="" disabled>
               Select a Doctor
             </option>
-            <option value="bhatra">Dr. Gambhir Bhatra</option>
-            <option value="sinha">Dr. Manoj Sinha</option>
-            <option value="rao">Dr. Gaurav Rao</option>
+            <option value="Dr. Gambhir Bhatra">Dr. Gambhir Bhatra</option>
+            <option value="Dr. Manoj Sinha">Dr. Manoj Sinha</option>
+            <option value="Dr. Gaurav Rao">Dr. Gaurav Rao</option>
            </select>
         </div>
 
