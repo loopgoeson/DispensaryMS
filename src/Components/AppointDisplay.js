@@ -22,6 +22,8 @@ const AppointDisplay = () => {
   return (
     <>
     <h1 className='text-4xl text-red-400 text-center'><strong>Appointments </strong></h1>
+    <br></br>
+    <h1 className='text-2xl text-blue-400 text-center'>Note:Double click on checkbox to mark the appointment as completed!!</h1>
     <div className='appointments'>
       {
         appointments.map((appointment,i)=>{

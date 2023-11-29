@@ -15,7 +15,7 @@ export const Home = () => {
           <Card.Body>
             <Card.Title style={{fontWeight:700, marginLeft:70, fontSize:28}}>Doctor</Card.Title>
             <Button variant="outline-primary" style={{marginLeft:40}}>
-            <Link to="/LoginDoctor">Click to Proceed</Link>
+            <Link to="/AppointDisplay">Click to Proceed</Link>
             </Button>
           </Card.Body>
         </Card>

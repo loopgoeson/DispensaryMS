@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import validator from 'validator';
 
 // Define a CSS style object
 const formStyle = {
@@ -30,33 +31,63 @@ const buttonStyle = {
 
 function Contact() {
   
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const[name,setName]=useState({});
+  const[email,setEmail]=useState({});
+  const[feedback,setFeedback]=useState({});
+  const [errors, setErrors] = useState({});
 
+ 
   const handleSubmit = async(e) => {
     e.preventDefault();
-   window.location.reload();
-    console.log(formData);
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Feedback submitted !");
+    console.log(name,email,feedback);
     let response = await fetch("http://localhost:3001/api/addFeedback", {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify({
-                   name: formData.name,
-                   email: formData.email,
-                   feedback: formData.message
+                   name: name,
+                   email: email,
+                   feedback: feedback
                 })
             });
             const json = await response.json();
             console.log(json);
-  };
+            resetForm();
+          }else {
+            setErrors(validationErrors);
+            displayErrors(validationErrors);
+          }       
+                    };
+                    const validateForm = () => {
+                      let errors={};
+                      if (!validator.isAlpha(name.replace(/\s/g, '')) && !validator.isLength(name, { min: 4 })) {
+                        errors.patientName = 'Please enter a valid name';
+                      }
+                      if (!validator.isEmail(email)) {
+                        errors.email = 'Please enter a valid email address';
+                      }
+                      if (!validator.isLength(feedback, { min: 5 })) {
+                        errors.feedback = 'Feedback should be at least 5 characters long';
+                      }
+                    
+                     return errors;
+                    };
+
+                    const displayErrors = (validationErrors) => {
+                      Object.keys(validationErrors).forEach((key) => {
+                        alert(validationErrors[key]);
+                      });
+                    };
+
+                    const resetForm = () => {
+                      setName('');
+                      setEmail('');
+                      setFeedback('');
+      
+                    };
 
   return (
     <div className='flex-col justify-center'>
@@ -79,10 +110,9 @@ function Contact() {
           <input
             style={inputStyle}
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div>
@@ -90,20 +120,19 @@ function Contact() {
           <input
             style={inputStyle}
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div>
           <label htmlFor="message">Message/Query:</label>
           <textarea
             style={inputStyle}
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
+            type="text"
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
+            required
           />
         </div>
         <button onClick={handleSubmit} style={buttonStyle} type="submit">
