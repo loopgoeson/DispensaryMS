@@ -51,9 +51,14 @@ function AppointmentForm() {
           
 
 
-              if (!validator.isAlpha(patientName.replace(/\s/g, '')) && !validator.isLength(patientName, { min: 4 })) {
+              if (!validator.isAlpha(patientName.replace(/\s/g, '')) ) {
                 errors.patientName = 'Please enter a valid name';
               }
+              if(!validator.isLength(patientName, { min: 3 }))
+              {
+                errors.patientName = 'Please enter a valid name';
+              }
+              
               if (validator.isEmpty(time)) {
                 errors.time = 'Please select a time';
               }
@@ -69,10 +74,12 @@ function AppointmentForm() {
                 errors.gender = 'Please select a gender';
               }
           
-              if (!validator.isMobilePhone(mobileNumber, 'any', { strictMode: false && !validator.isLength(mobileNumber, { min: 10, max: 10 }) })) {
+              if (!validator.isMobilePhone(mobileNumber, 'any', { strictMode: false}  )) {
                 errors.mobileNumber = 'Please enter a valid mobile number';
               }
-          
+              if(!validator.isLength(mobileNumber, { min: 10, max: 10 })){
+                errors.mobileNumber = 'Please enter a valid mobile number';
+              }
               return errors;
             };
 

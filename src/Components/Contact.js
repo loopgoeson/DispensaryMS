@@ -32,9 +32,9 @@ const buttonStyle = {
 function Contact() {
   
 
-  const[name,setName]=useState({});
-  const[email,setEmail]=useState({});
-  const[feedback,setFeedback]=useState({});
+  const[name,setName]=useState('');
+  const[email,setEmail]=useState('');
+  const[feedback,setFeedback]=useState('');
   const [errors, setErrors] = useState({});
 
  
