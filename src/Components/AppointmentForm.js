@@ -11,7 +11,7 @@ function AppointmentForm() {
   const [age, setAge]=useState('');
   const [gender, setGender] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
-  const [errors, setErrors] = useState({});
+  const [, setErrors] = useState({});
 
 
   const handleFormSubmit = async(e) => {
@@ -21,6 +21,7 @@ function AppointmentForm() {
     if (Object.keys(validationErrors).length === 0) {
       console.log('Appointment details submitted:', { date, time, patientName,doctor,age,gender,mobileNumber});
       alert("Appointment booked !");
+      resetForm();
             let response = await fetch("http://localhost:3001/api/addAppointment", {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
@@ -36,7 +37,7 @@ function AppointmentForm() {
             });
             const json = await response.json();
     console.log(json);
-    resetForm();
+
     
   }else {
     setErrors(validationErrors);
@@ -48,9 +49,6 @@ function AppointmentForm() {
               if (!validator.isDate(date)) {
                 errors.date = 'Please enter a valid date';
               }
-          
-
-
               if (!validator.isAlpha(patientName.replace(/\s/g, '')) ) {
                 errors.patientName = 'Please enter a valid name';
               }
