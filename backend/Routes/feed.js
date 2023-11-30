@@ -2,7 +2,6 @@ const express = require('express');
 const router=express.Router();
 const feed=require('../models/feedback');
 
-
 router.post('/addFeedback', (req, res) => {
     const {name,email,feedback} = req.body;
     const newFeedback = new feed({
@@ -29,6 +28,6 @@ router.post('/addFeedback', (req, res) => {
     });
   })
 
-  router.delete('')
+
   
   module.exports=router;

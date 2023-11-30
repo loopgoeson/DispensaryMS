@@ -20,7 +20,6 @@ const LoginAdmin = () => {
       setPassword('');
     }
   };
-
   return (
     <Form className='form'onSubmit={handleSubmit}>
         <Card >

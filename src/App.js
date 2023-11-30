@@ -13,6 +13,9 @@ import AppointDisplay from './Components/AppointDisplay';
 import AdminPortal from './Components/AdminPortal';
 import Feedback from './Components/Feedback';
 import FeedDisplay from './Components/FeedDisplay';
+import Cart from './Components/Cart';
+import Order from './Components/Order';
+import OrderDisplay from './Components/OrderDisplay';
 import { BrowserRouter as Router,Routes,Route   } from 'react-router-dom';
 function App() {
   return (
@@ -32,7 +35,10 @@ function App() {
         <Route path='/AppointDisplay' element={<AppointDisplay/>}/>
         <Route path='/Feedback' element={< Feedback/>} />
         <Route path='/FeedDisplay' element={<FeedDisplay/>}/>
-        <Route path='/AdminPortal' element={<AdminPortal/>}></Route>
+        <Route path='/Cart' element={< Cart/>} />
+        <Route path='/Order' element={< Order/>} />
+        <Route path='/OrderDisplay' element={<OrderDisplay/>}/>
+        <Route path='/AdminPortal' element={<AdminPortal/>}/>
       </Routes>
     </Router>
   

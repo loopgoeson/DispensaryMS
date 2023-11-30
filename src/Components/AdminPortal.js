@@ -21,7 +21,7 @@ const AdminPortal = () => {
           <Card.Img className='img' variant="top" src={pharmacy} />
           <Card.Body>
           <Button variant="outline-primary" type="submit" >
-         <Link to="">Pharmacy Orders</Link>
+         <Link to="/OrderDisplay">Pharmacy Orders</Link>
         </Button>
           </Card.Body>
         </Card>

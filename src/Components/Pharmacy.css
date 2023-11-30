@@ -5,3 +5,12 @@
     gap: 30px;
     margin-left: 70px;
 }
+.head{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 400px;
+    margin-left: 600px;
+}
+.logo{ 
+  height: 40px;
+}
