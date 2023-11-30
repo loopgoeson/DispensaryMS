@@ -56,7 +56,7 @@ const Cart = ({cartItems}) => {
         
         <form onSubmit={handleSubmit}>
           <label>
-            UPI ID:
+            Payment Reference No:
             <input
               type="text"
               name="Upi_id"
